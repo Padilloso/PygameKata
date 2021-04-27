@@ -1,4 +1,10 @@
 import pygame as pg
+import sys
+
+
+def fin_juego():
+    pg.quit()
+    sys.exit()
 
 pg.init()
 
@@ -10,12 +16,11 @@ game_over = False
 while  not game_over:
     for event in pg.event.get():
         if event.type == pg.QUIT:
-            gameOver = True
+            game_over = True
 
     pantalla.fill((0,255,0))
 
     pg.display.flip()
-while True:
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
-            close()
+
+fin_juego()
+
